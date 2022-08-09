@@ -1,0 +1,17 @@
+<h4 class="page-header">Kategoriler</h4>
+<ul class="list-group">
+  <li class="list-group-item"
+      [routerLinkActiveOptions]="{exact: true}"
+      routerLinkActive="active"
+      routerLink="products"
+      (click)="onSelect()">
+    Hepsi
+  </li>
+  <li *ngFor="let category of categories"
+      class="list-group-item"
+      (click)="onSelect(category)"
+      routerLinkActive="active"
+      routerLink="products/{{category.name.toLowerCase()}}">
+    {{category.name}}
+  </li>
+</ul>
